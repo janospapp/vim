@@ -1,0 +1,1 @@
+/home/janos/.vimrc
