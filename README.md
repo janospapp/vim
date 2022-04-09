@@ -4,6 +4,6 @@ Clone the repo into ~/.vim/pack
 
 `git clone https://github.com/janospapp/vim ~/.vim/pack`
 
-Then copy .vimrc to your home directory
+Then create a symlink of .vimrc to your home directory
 
-`cp ~/.vim/pack/.vimrc ~/.vimrc`
+`ln -s ~/.vim/pack/.vimrc ~/.vimrc`
