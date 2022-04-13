@@ -22,7 +22,8 @@ let NERDTreeWinSize=45
 " Set erlang syntax for erlSrc
 au BufNewFile,BufRead *.erlSrc set syntax=erlang
 
-" What to show in statusline. (if modified/if readonly/filename/position %
-set statusline=%m%r%f\ %p%%
-" Make statusline always visible
-set laststatus=2
+"" What to show in statusline. (if modified/if readonly/filename/position %
+"set statusline=%m%r%f\ %p%%
+"" Make statusline always visible
+"set laststatus=2
+let g:airline_theme='deus'
