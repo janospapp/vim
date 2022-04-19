@@ -1,0 +1,4 @@
+# Ignoring swap files
+*
+# but not .gitignore
+!.gitignore

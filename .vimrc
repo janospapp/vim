@@ -21,23 +21,22 @@ nmap <C-j> :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
 let NERDTreeWinSize=45
 
-" Set erlang syntax for erlSrc
-au BufNewFile,BufRead *.erlSrc set syntax=erlang
-
 let g:airline_theme='deus'
-
-" Using FZF with ripgrep for searching inside files
-function! RipgrepFzf(query, fullscreen)
-  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
-  let initial_command = printf(command_fmt, shellescape(a:query))
-  let reload_command = printf(command_fmt, '{q}')
-  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
-  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
-endfunction
-
-command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
-
-nmap <C-p> :Files<CR>
 
 " Storing swap files in a separate directory
 set dir=~/.vim/swp//
+
+" Searching files and text
+nmap <C-p> :Files<CR>
+nmap <C-f> :Rg<CR>
+
+" Toggling the quickfix window with Ctrl+x
+function! ToggleQuickFix()
+    if empty(filter(getwininfo(), 'v:val.quickfix'))
+        copen
+    else
+        cclose
+    endif
+endfunction
+
+nnoremap <C-x> :call ToggleQuickFix()<CR>
