@@ -17,6 +17,7 @@ set nowrap
 set encoding=utf8
 
 nmap <C-n> :NERDTreeToggle<CR>
+nmap <C-j> :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
 let NERDTreeWinSize=45
 
@@ -37,3 +38,6 @@ endfunction
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 nmap <C-p> :Files<CR>
+
+" Storing swap files in a separate directory
+set dir=~/.vim/swp//
