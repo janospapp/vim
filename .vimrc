@@ -23,12 +23,9 @@ let NERDTreeWinSize=45
 " Set erlang syntax for erlSrc
 au BufNewFile,BufRead *.erlSrc set syntax=erlang
 
-"" What to show in statusline. (if modified/if readonly/filename/position %
-"set statusline=%m%r%f\ %p%%
-"" Make statusline always visible
-"set laststatus=2
 let g:airline_theme='deus'
 
+" Using FZF with ripgrep for searching inside files
 function! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
   let initial_command = printf(command_fmt, shellescape(a:query))
@@ -38,3 +35,5 @@ function! RipgrepFzf(query, fullscreen)
 endfunction
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+
+nmap <C-p> :Files<CR>
