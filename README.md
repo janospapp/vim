@@ -1,5 +1,7 @@
 # My Vim plugins and vimrc
 
+## Install
+
 Clone the repo into ~/.vim/pack
 
 ```
@@ -16,6 +18,19 @@ Then create a symlink of .vimrc to your home directory
 
 `ln -s ~/.vim/.vimrc ~/.vimrc`
 
-Adding new modules
+## Add new modules
 
 `git submodule add <github repo path> pack/plugins/start/<plugin-name>`
+
+## Code completion
+
+The 'deoplete' plugin is used for code completion. It requires these two plugins:
+* nvim-yarp
+* vim-hug-neovim-rpc
+
+And it requires these two python packages to be installed
+
+```
+pip install pynvim
+pip install neovim
+```
