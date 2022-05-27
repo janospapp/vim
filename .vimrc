@@ -24,6 +24,7 @@ nmap <C-n> :NERDTreeToggle<CR>
 nmap <C-j> :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
 let NERDTreeWinSize=45
+let NERDTreeChDirMode=2
 
 let g:airline_theme='deus'
 

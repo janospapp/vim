@@ -22,3 +22,9 @@
 [submodule "pack/plugins/start/fzf"]
 	path = pack/plugins/start/fzf
 	url = https://github.com/junegunn/fzf
+[submodule "pack/plugins/start/ale"]
+	path = pack/plugins/start/ale
+	url = https://github.com/dense-analysis/ale
+[submodule "pack/plugins/start/deoplete"]
+	path = pack/plugins/start/deoplete
+	url = https://github.com/Shougo/deoplete.nvim
