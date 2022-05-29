@@ -49,14 +49,18 @@ endfunction
 nnoremap <C-x> :call ToggleQuickFix()<CR>
 
 " Configure ALE options
+let g:ale_set_highlights = 0
 let g:ale_linters = {
 \  'ruby': ['standardrb', 'rubocop'],
 \}
 
 let g:ale_fixers={
 \  '*': ['remove_trailing_lines', 'trim_whitespace'],
-\  'ruby': ['standardrb'],
+\  'ruby': ['standardrb', 'rubocop'],
 \}
 
 " Deoplete for code completion
 let g:deoplete#enable_at_startup = 1
+
+packloadall
+silent! helptags ALL
