@@ -50,8 +50,13 @@ nnoremap <C-x> :call ToggleQuickFix()<CR>
 
 " Configure ALE options
 let g:ale_set_highlights = 0
+let g:ale_completion_enabled = 1
+
+let g:ale_ruby_rubocop_executable = 'bundle'
+let g:ale_ruby_rubocop_options = '-c .rubocop.yml'
+
 let g:ale_linters = {
-\  'ruby': ['standardrb', 'rubocop'],
+\  'ruby': ['solargraph', 'standardrb', 'rubocop'],
 \}
 
 let g:ale_fixers={
@@ -59,8 +64,7 @@ let g:ale_fixers={
 \  'ruby': ['standardrb', 'rubocop'],
 \}
 
-" Deoplete for code completion
-let g:deoplete#enable_at_startup = 1
+nmap gd :ALEGoToDefinition<CR>
 
 packloadall
 silent! helptags ALL
